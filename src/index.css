@@ -1,0 +1,327 @@
+/* Fonts loaded via HTML for better performance */
+/* Font display swap for better performance */
+@font-face {
+  font-family: 'Manrope';
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Public Sans';
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --medicaps-blue: #283887;
+  --medicaps-burgundy: #A21D2E;
+  --inti-red: #EC2028;
+  --woosong-teal: #0D9488;
+  --aivancity-black: #1A1A1A;
+  --background-default: #FFFFFF;
+  --background-subtle: #F8F9FA;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-default);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.font-heading {
+  font-family: 'Manrope', sans-serif;
+}
+
+.font-body {
+  font-family: 'Public Sans', sans-serif;
+}
+
+.font-accent {
+  font-family: 'Libre Baskerville', serif;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 230 53% 34%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 351 71% 38%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 230 53% 34%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--medicaps-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--medicaps-burgundy);
+}
+
+/* Animation utilities */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease-out forwards;
+}
+
+/* Stagger animation delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+
+/* Glass morphism */
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--medicaps-blue) 0%, var(--medicaps-burgundy) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Brand gradient backgrounds */
+.bg-brand-gradient {
+  background: linear-gradient(135deg, var(--medicaps-blue) 0%, var(--medicaps-burgundy) 100%);
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(40, 56, 135, 0.15);
+}
+
+/* Section decorations */
+.section-decoration {
+  position: relative;
+}
+
+.section-decoration::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--medicaps-blue), var(--medicaps-burgundy));
+  border-radius: 2px;
+}
+
+/* Partner brand colors */
+.woosong-accent {
+  border-color: var(--woosong-teal);
+}
+
+.woosong-bg {
+  background-color: rgba(13, 148, 136, 0.1);
+}
+
+.aivancity-accent {
+  border-color: var(--aivancity-black);
+}
+
+.aivancity-bg {
+  background-color: rgba(26, 26, 26, 0.05);
+}
+
+.inti-accent {
+  border-color: var(--inti-red);
+}
+
+.inti-bg {
+  background-color: rgba(236, 32, 40, 0.08);
+}
+
+/* NPF Widget Styles Ported from iframe */
+.npf_wgts * {
+  color: white !important;
+  font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+.npf_wgts input[type="text"],
+.npf_wgts input[type="email"],
+.npf_wgts input[type="tel"],
+.npf_wgts select,
+.npf_wgts textarea {
+  color: #1e293b !important;
+  background-color: white !important;
+  border: 1px solid #475569 !important;
+  border-radius: 0.75rem !important;
+  padding: 12px 16px !important;
+  font-size: 16px !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+  width: 100% !important;
+}
+
+.npf_wgts input[type="text"]:focus,
+.npf_wgts input[type="email"]:focus,
+.npf_wgts input[type="tel"]:focus,
+.npf_wgts select:focus,
+.npf_wgts textarea:focus {
+  border-color: #283887 !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(40, 56, 135, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.npf_wgts label {
+  color: white !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  margin-bottom: 6px !important;
+  display: block !important;
+}
+
+.npf_wgts button,
+.npf_wgts input[type="submit"],
+.npf_wgts input[type="button"] {
+  background: #283887 !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 0.75rem !important;
+  padding: 12px 24px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 2px 4px rgba(40, 56, 135, 0.2) !important;
+  width: 100% !important;
+}
+
+.npf_wgts button:hover,
+.npf_wgts input[type="submit"]:hover,
+.npf_wgts input[type="button"]:hover {
+  background: #1e2a5a !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 8px rgba(40, 56, 135, 0.3) !important;
+}
+
+.npf_wgts input[type="checkbox"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+}

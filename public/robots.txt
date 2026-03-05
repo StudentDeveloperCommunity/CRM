@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dual-degree-hub.preview.emergentagent.com/sitemap.xml
