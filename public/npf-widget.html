@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://widgets.nopaperforms.com" />
+    <link rel="dns-prefetch" href="https://widgets.nopaperforms.com" />
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+        font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        background: #A21D2E;
+        color: white;
+        min-height: 360px;
+        box-sizing: border-box;
+      }
+      .npf_wgts * {
+        color: white !important;
+        font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+      }
+      .npf_wgts input[type="text"],
+      .npf_wgts input[type="email"],
+      .npf_wgts input[type="tel"],
+      .npf_wgts select,
+      .npf_wgts textarea {
+        color: #1e293b !important;
+        background-color: white !important;
+        border: 1px solid #475569 !important;
+        border-radius: 0.75rem !important;
+        padding: 12px 16px !important;
+        font-size: 16px !important;
+        transition: all 0.2s ease !important;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+      }
+      .npf_wgts input[type="text"]:focus,
+      .npf_wgts input[type="email"]:focus,
+      .npf_wgts input[type="tel"]:focus,
+      .npf_wgts select:focus,
+      .npf_wgts textarea:focus {
+        border-color: #283887 !important;
+        outline: none !important;
+        box-shadow: 0 0 0 3px rgba(40, 56, 135, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+      }
+      .npf_wgts label {
+        color: white !important;
+        font-weight: 600 !important;
+        font-size: 14px !important;
+        margin-bottom: 6px !important;
+        display: block !important;
+      }
+      .npf_wgts button,
+      .npf_wgts input[type="submit"],
+      .npf_wgts input[type="button"] {
+        background: #283887 !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 0.75rem !important;
+        padding: 12px 24px !important;
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        cursor: pointer !important;
+        transition: all 0.2s ease !important;
+        box-shadow: 0 2px 4px rgba(40, 56, 135, 0.2) !important;
+      }
+      .npf_wgts button:hover,
+      .npf_wgts input[type="submit"]:hover,
+      .npf_wgts input[type="button"]:hover {
+        background: #1e2a5a !important;
+        transform: translateY(-1px) !important;
+        box-shadow: 0 4px 8px rgba(40, 56, 135, 0.3) !important;
+      }
+      .npf_wgts input[type="checkbox"] {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        width: 0 !important;
+        height: 0 !important;
+        position: absolute !important;
+        left: -9999px !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="npf_wgts" data-height="400px" data-w="1242a8cbbc551970993f589ee9febba6"></div>
+    <script src="https://widgets.nopaperforms.com/emwgts.js" async></script>
+    <script>
+      var checkInterval = setInterval(function () {
+        var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        if (checkboxes.length > 0) {
+          checkboxes.forEach(function (checkbox) {
+            var parentText = checkbox.parentElement ? checkbox.parentElement.textContent || '' : '';
+            var nextSiblingText = checkbox.nextSibling ? checkbox.nextSibling.textContent || '' : '';
+
+            if (
+              parentText.includes('I agree to receive information') ||
+              nextSiblingText.includes('I agree to receive information') ||
+              parentText.includes('agree to receive') ||
+              nextSiblingText.includes('agree to receive')
+            ) {
+              checkbox.checked = true;
+              checkbox.dispatchEvent(new Event('change', { bubbles: true }));
+              checkbox.dispatchEvent(new Event('click', { bubbles: true }));
+            }
+          });
+          clearInterval(checkInterval);
+        }
+      }, 100);
+    </script>
+  </body>
+</html>
