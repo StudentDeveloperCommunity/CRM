@@ -281,6 +281,19 @@ const HeroSection = () => {
                 <NpfWidget />
               </div>
               
+              {/* NoPaperForms Widget for Global Courses */}
+              <div className="rounded-3xl p-8 shadow-2xl mt-4" style={{ backgroundColor: '#f8fafc', border: '2px solid #e2e8f0' }}>
+                <div className="text-center mb-6">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-blue-500 to-teal-500 flex items-center justify-center">
+                    <Globe2 className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Global Courses Inquiry</h3>
+                  <p className="text-gray-600">Get information about international programs</p>
+                </div>
+                
+                <div className="npf_wgts" data-height="400px" data-w="be92cb64dc3effa7a68f233223de8ea6"></div>
+              </div>
+              
               <p className="text-xs text-center text-gray-400 mt-4">
                 By submitting, you agree to our privacy policy and terms of service.
               </p>
@@ -1322,7 +1335,9 @@ function App() {
       >
         Skip to main content
       </a>
+      
       <Navigation />
+      
       <main role="main" id="main-content" aria-label="Main content">
         <HeroSection />
         <QuoteSection />
