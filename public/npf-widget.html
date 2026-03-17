@@ -8,16 +8,35 @@
     <style>
       body {
         margin: 0;
-        padding: 20px;
+        padding: 0;
         font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
         background: #A21D2E;
         color: white;
-        min-height: 360px;
+        min-height: 400px;
         box-sizing: border-box;
       }
-      .npf_wgts * {
+      .npf_wgts {
+        background-color: #A21D2E !important;
+        border-radius: 10px;
+      }
+      .npf_wgts > div {
+        background-color: #A21D2E !important;
+      }
+      .npf_wgts form {
+        background-color: #A21D2E !important;
+      }
+      .npf_wgts form > div {
+        background-color: #A21D2E !important;
+      }
+      .npf_wgts div:not(:has(input)):not(:has(textarea)):not(:has(select)):not(:has(button)) {
+        background-color: #A21D2E !important;
+      }
+      .npf_wgts span, .npf_wgts p, .npf_wgts label {
+        background-color: #A21D2E !important;
         color: white !important;
-        font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+      }
+      .npf_wgts * {
+        background-color: #A21D2E !important;
       }
       .npf_wgts input[type="text"],
       .npf_wgts input[type="email"],
@@ -82,30 +101,13 @@
     </style>
   </head>
   <body>
-    <div class="npf_wgts" data-height="400px" data-w="1242a8cbbc551970993f589ee9febba6"></div>
-    <script src="https://widgets.nopaperforms.com/emwgts.js" async></script>
-    <script>
-      var checkInterval = setInterval(function () {
-        var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-        if (checkboxes.length > 0) {
-          checkboxes.forEach(function (checkbox) {
-            var parentText = checkbox.parentElement ? checkbox.parentElement.textContent || '' : '';
-            var nextSiblingText = checkbox.nextSibling ? checkbox.nextSibling.textContent || '' : '';
-
-            if (
-              parentText.includes('I agree to receive information') ||
-              nextSiblingText.includes('I agree to receive information') ||
-              parentText.includes('agree to receive') ||
-              nextSiblingText.includes('agree to receive')
-            ) {
-              checkbox.checked = true;
-              checkbox.dispatchEvent(new Event('change', { bubbles: true }));
-              checkbox.dispatchEvent(new Event('click', { bubbles: true }));
-            }
-          });
-          clearInterval(checkInterval);
-        }
-      }, 100);
-    </script>
+    <div class="npf_wgts" data-height="400px" data-w="be92cb64dc3effa7a68f233223de8ea6"></div>
+    <script type="text/javascript">
+var s=document.createElement("script");
+s.type="text/javascript";
+s.async=true;
+s.src="https://widgets.nopaperforms.com/emwgts.js";
+document.body.appendChild(s);
+</script>
   </body>
 </html>
